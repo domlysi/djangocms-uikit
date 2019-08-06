@@ -16,6 +16,12 @@ Install DjangoCMS-UiKit:
    
 Then add ``djangocms-uikit`` to ``INSTALLED_APPS``
 
+Don't forget:
+
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+    
+
 Next download the UiKit Files or add the CDNs to your project main template.
 
 Before the ``</head>`` tag:
