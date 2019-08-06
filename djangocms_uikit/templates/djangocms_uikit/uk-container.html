@@ -1,0 +1,6 @@
+{% load cms_tags %}
+<div class="uk-container {% if instance.container_expand %}uk-container-expand{% endif %}">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>

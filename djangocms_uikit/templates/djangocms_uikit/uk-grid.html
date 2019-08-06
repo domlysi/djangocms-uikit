@@ -1,0 +1,8 @@
+{% load cms_tags %}
+<div class="uk-child-width-1-3@m {{ instance.grid_gutter }}
+{% if instance.grid_divider %}uk-grid-divider{% endif %} #
+{% if instance.grid_match %}uk-grid-match{% endif %}" uk-grid>
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>
