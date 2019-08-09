@@ -2,12 +2,13 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext as _
 
-from djangocms_uikit.models import CardsPluginModel, UKContainer, UKGrid
+from djangocms_uikit.models import CardsPluginModel, UKContainerModel, UKGridModel, UkAccordionModel, \
+    UkAccordionItemModel
 
 
 @plugin_pool.register_plugin
 class UkContainer(CMSPluginBase):
-    model = UKContainer
+    model = UKContainerModel
     module = _('Layout')
     name = _('UK Container')
 
@@ -17,7 +18,7 @@ class UkContainer(CMSPluginBase):
 
 @plugin_pool.register_plugin
 class UkGrid(CMSPluginBase):
-    model = UKGrid
+    model = UKGridModel
     module = _('Layout')
     name = _('UK Grid')
 
@@ -37,3 +38,22 @@ class CardsPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({'instance': instance})
         return context
+
+
+@plugin_pool.register_plugin
+class UkAccordionItem(CMSPluginBase):
+    module = _("Elements")
+    model = UkAccordionItemModel
+    name = _("Accordion Item")
+    render_template = "djangocms_uikit/accordion_items.html"
+    parent_classes = ("UkAccordion",)
+
+
+@plugin_pool.register_plugin
+class UkAccordion(CMSPluginBase):
+    model = UkAccordionModel
+    module = _("Elements")
+    name = _("Accordion")
+    render_template = "djangocms_uikit/accordion.html"
+    allow_children = True
+    child_classes = ("UkAccordionItem",)
