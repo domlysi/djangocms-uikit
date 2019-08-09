@@ -26,13 +26,23 @@ Next download the UIKit Files or add the CDNs to your project main template.
 
 Before the ``</head>`` tag:
 ```html
+{% addtoblock 'css' %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css">
+{% endaddtoblock %}
 ```
 
 Before the ``</body>`` tag:
 ```html
+{% addtoblock 'js' %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js" type="text/javascript"></script>
+{% endaddtoblock %}
+```
+and
+
+```html
+{% addtoblock 'js' %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js" type="text/javascript"></script>
+{% endaddtoblock %}
 ```
 
 ## Built With

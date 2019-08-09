@@ -2,13 +2,13 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext as _
 
-from djangocms_uikit.models import CardsPluginModel, UKContainerModel, UKGridModel, UkAccordionModel, \
+from djangocms_uikit.models import CardsPluginModel, UkContainerModel, UkGridModel, UkAccordionModel, \
     UkAccordionItemModel
 
 
 @plugin_pool.register_plugin
 class UkContainer(CMSPluginBase):
-    model = UKContainerModel
+    model = UkContainerModel
     module = _('Layout')
     name = _('UK Container')
 
@@ -18,7 +18,7 @@ class UkContainer(CMSPluginBase):
 
 @plugin_pool.register_plugin
 class UkGrid(CMSPluginBase):
-    model = UKGridModel
+    model = UkGridModel
     module = _('Layout')
     name = _('UK Grid')
 
@@ -27,17 +27,11 @@ class UkGrid(CMSPluginBase):
 
 
 @plugin_pool.register_plugin
-class CardsPlugin(CMSPluginBase):
+class UkCardsPlugin(CMSPluginBase):
     model = CardsPluginModel  # model where plugin data are saved
     module = _("Elements")
-    name = _("Cards Plugin")  # name of the plugin in the interface
-    render_template = "djangocms_uikit/cards.html"
-
-    # parent_classes = [UkGrid, ]
-
-    def render(self, context, instance, placeholder):
-        context.update({'instance': instance})
-        return context
+    name = _("Card")  # name of the plugin in the interface
+    render_template = "djangocms_uikit/uk-cards.html"
 
 
 @plugin_pool.register_plugin
@@ -45,7 +39,7 @@ class UkAccordionItem(CMSPluginBase):
     module = _("Elements")
     model = UkAccordionItemModel
     name = _("Accordion Item")
-    render_template = "djangocms_uikit/accordion_items.html"
+    render_template = "djangocms_uikit/uk-accordion_items.html"
     parent_classes = ("UkAccordion",)
 
 
@@ -54,6 +48,6 @@ class UkAccordion(CMSPluginBase):
     model = UkAccordionModel
     module = _("Elements")
     name = _("Accordion")
-    render_template = "djangocms_uikit/accordion.html"
+    render_template = "djangocms_uikit/uk-accordion.html"
     allow_children = True
     child_classes = ("UkAccordionItem",)

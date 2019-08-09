@@ -16,7 +16,7 @@ class CardsPluginModel(CMSPlugin):
     text = models.TextField()
 
 
-class UKGridModel(CMSPlugin):
+class UkGridModel(CMSPlugin):
     GUTTER_CHOICES = (
         ('uk-grid-small', _('Small')),
         ('uk-grid-medium', _('medium')),
@@ -30,7 +30,7 @@ class UKGridModel(CMSPlugin):
     grid_match = models.BooleanField(default=False, verbose_name=_('Match Height'), )
 
 
-class UKContainerModel(CMSPlugin):
+class UkContainerModel(CMSPlugin):
     container_expand = models.BooleanField(default=False)
 
 
