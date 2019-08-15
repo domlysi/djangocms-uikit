@@ -9,8 +9,8 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='djangocms-uikit',
-    version='0.1',
-    packages=find_packages(),
+    version='0.1.3',
+    packages=find_packages(exclude=('djangocms_uikit_wrapper',)),
     include_package_data=True,
     license='BSD License',  # example license
     description='A UiKit Plugin for the DjangoCMS Framework',

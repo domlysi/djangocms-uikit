@@ -1,0 +1,7 @@
+<div>
+    <div class="uk-card uk-card-body {{ instance.size|default_if_none:"" }} {{ instance.style|default_if_none:"" }}
+{{ instance.hover|yesno:"uk-card-hover," }}">
+        <h3 class="uk-card-title uk-card">{{ instance.title }}</h3>
+        <p>{{ instance.text }}</p>
+    </div>
+</div>

@@ -129,3 +129,6 @@ dmypy.json
 # Django
 djangocms_uikit/migrations/0*.py
 .idea/
+/manage.py
+/djangocms_uikit_wrapper/
+/db.sqlite3
