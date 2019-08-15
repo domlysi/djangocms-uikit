@@ -1,6 +1,7 @@
 <div>
-    <div class="uk-card uk-card-default uk-card-body">
-        <h3 class="uk-card-title">Default</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <div class="uk-card uk-card-body {{ instance.size|default_if_none:"" }} {{ instance.style|default_if_none:"" }}
+{{ instance.hover|yesno:"uk-card-hover," }}">
+        <h3 class="uk-card-title uk-card">{{ instance.title }}</h3>
+        <p>{{ instance.text }}</p>
     </div>
 </div>

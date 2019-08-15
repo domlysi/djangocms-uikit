@@ -3,7 +3,7 @@ from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext as _
 
 from djangocms_uikit.models import CardsPluginModel, UkContainerModel, UkGridModel, UkAccordionModel, \
-    UkAccordionItemModel
+    UkAccordionItemModel, UkSectionModel
 
 
 @plugin_pool.register_plugin
@@ -51,3 +51,12 @@ class UkAccordion(CMSPluginBase):
     render_template = "djangocms_uikit/uk-accordion.html"
     allow_children = True
     child_classes = ("UkAccordionItem",)
+
+
+@plugin_pool.register_plugin
+class UkSection(CMSPluginBase):
+    module = _("Layout")
+    name = _("Section")
+    render_template = "djangocms_uikit/uk-section.html"
+    allow_children = True
+    model = UkSectionModel

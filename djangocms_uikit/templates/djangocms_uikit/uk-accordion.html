@@ -1,7 +1,7 @@
 {% load cms_tags %}
 <ul class="{{ instance.extra_classes|default_if_none:"" }}"
-    uk-accordion="collapsible: {{ instance.collapsible|yesno:"true|false" }};
-multiple: {{ instance.multiple|yesno:"true|false" }};
+    uk-accordion="collapsible: {{ instance.collapsible|yesno:"true,false" }};
+multiple: {{ instance.multiple|yesno:"true,false" }};
 {% if instance.active %}active: {{ instance.active }}; {% endif %}
 {% if instance.duration %}duration: {{ instance.duration }}; {% endif %}
 {% if instance.transition %}transition: {{ instance.transition }}; {% endif %}
