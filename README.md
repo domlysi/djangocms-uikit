@@ -1,6 +1,6 @@
 # DjangoCMS UiKit
 
-This package implements the UiKit Elements as reusable Plugins for the DjangoCMS. 
+This package implements the UIKit Elements as reusable Plugins for the DjangoCMS. 
 
 ### Prerequisites
 
@@ -10,7 +10,7 @@ If you wanna know how to start a Django CMS Project check the the Docs.
 [Django-CMS.org](http://docs.django-cms.org/en/release-3.4.x/introduction/install.html) - Installing Django CMS
 
 ### Quick Start
-Install DjangoCMS-UiKit:
+Install DjangoCMS-UIKit:
 
     python3 -m pip install djangocms-uikit
    
@@ -22,17 +22,27 @@ Don't forget:
     python3 manage.py migrate
     
 
-Next download the UiKit Files or add the CDNs to your project main template.
+Next download the UIKit Files or add the CDNs to your project main template.
 
 Before the ``</head>`` tag:
 ```html
+{% addtoblock 'css' %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css">
+{% endaddtoblock %}
 ```
 
 Before the ``</body>`` tag:
 ```html
+{% addtoblock 'js' %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js" type="text/javascript"></script>
+{% endaddtoblock %}
+```
+and
+
+```html
+{% addtoblock 'js' %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js" type="text/javascript"></script>
+{% endaddtoblock %}
 ```
 
 ## Built With
