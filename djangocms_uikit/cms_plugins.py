@@ -8,29 +8,30 @@ from djangocms_uikit.models import CardsPluginModel, UKContainer, UKGrid
 @plugin_pool.register_plugin
 class UkContainer(CMSPluginBase):
     model = UKContainer
-    module = _('Layout')
-    name = _('UK Container')
+    module = _('UIKit')
+    name = _('Container')
 
-    render_template = "djangocms_uikit/uk-container.html"
+    render_template = "djangocms_uikit/container.html"
     allow_children = True
 
 
 @plugin_pool.register_plugin
 class UkGrid(CMSPluginBase):
     model = UKGrid
-    module = _('Layout')
-    name = _('UK Grid')
+    module = _('UIKit')
+    name = _('Grid')
 
-    render_template = "djangocms_uikit/uk-grid.html"
+    render_template = "djangocms_uikit/grid.html"
     allow_children = True
 
 
 @plugin_pool.register_plugin
 class CardsPlugin(CMSPluginBase):
     model = CardsPluginModel  # model where plugin data are saved
-    module = _("Elements")
-    name = _("Cards Plugin")  # name of the plugin in the interface
+    module = _("UIKit")
+    name = _("Card")  # name of the plugin in the interface
     render_template = "djangocms_uikit/cards.html"
+    allow_children = True
 
     # parent_classes = [UkGrid, ]
 

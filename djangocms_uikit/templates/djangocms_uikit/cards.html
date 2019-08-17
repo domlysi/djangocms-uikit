@@ -1,6 +1,32 @@
-<div>
-    <div class="uk-card uk-card-default uk-card-body">
-        <h3 class="uk-card-title">Default</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+{% load cms_tags %}
+<div class="uk-card {{ instance.style }}">
+    {% if instance.media %}
+        <div class="{{ instance.media_position }}">
+            <img src="{{ instance.media.url }}" alt="">
+        </div>
+    {% endif %}
+
+    {% if instance.head_title %}
+    <div class="uk-card-header">
+        <h3 class="uk-card-title">
+            {{ instance.head_title }}
+        </h3>
+    </div>
+    {% endif %}
+    <div class="uk-card-body
+                {% if instance.size %} {{ instance.size  }}{% endif %}
+                {% if instance.hover %}uk-card-hover {% endif %}">
+
+        {% if instance.badge_value %}
+            <div class="uk-card-badge uk-label">{{ instance.badge_value }}</div>
+        {% endif %}
+        {% if instance.title %}
+            <h3 class="uk-card-title">{{ instance.title }}</h3>
+        {% endif %}
+        <p>
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+        </p>
     </div>
 </div>
