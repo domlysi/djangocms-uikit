@@ -14,7 +14,7 @@ Install DjangoCMS-UIKit:
 
     python3 -m pip install djangocms-uikit
    
-Then add ``djangocms-uikit`` to ``INSTALLED_APPS``
+Then add ``djangocms_uikit`` to ``INSTALLED_APPS``
 
 Don't forget:
 
