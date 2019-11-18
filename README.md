@@ -18,7 +18,6 @@ Then add ``djangocms_uikit`` to ``INSTALLED_APPS``
 
 Don't forget:
 
-    python3 manage.py makemigrations
     python3 manage.py migrate
     
 
