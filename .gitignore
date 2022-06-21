@@ -132,3 +132,4 @@ djangocms_uikit/migrations/0*.py
 /manage.py
 /djangocms_uikit_wrapper/
 /db.sqlite3
+project.db
